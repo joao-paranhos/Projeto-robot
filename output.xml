@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.2 on win32)" generated="2024-11-05T21:13:08.316313" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="c:\Users\joao.paranhos\Desktop\robott\test\login.robot">
+<test id="s1-t1" name="Unsuccessful login - No credentials" line="21">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-11-05T21:13:08.521237" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-05T21:13:08.521237" elapsed="2.017375"/>
+</kw>
+<kw name="I navegate to the login page" owner="login_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-05T21:13:10.544192" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-05T21:13:10.543515" elapsed="0.898031"/>
+</kw>
+<arg>${URL}</arg>
+<status status="PASS" start="2024-11-05T21:13:10.538612" elapsed="0.902934"/>
+</kw>
+<kw name="I Click on the button login" owner="login_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-05T21:13:11.445000" level="INFO">Clicking button 'login-button'.</msg>
+<arg>login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-05T21:13:11.444503" elapsed="0.089869"/>
+</kw>
+<status status="PASS" start="2024-11-05T21:13:11.443120" elapsed="0.091861"/>
+</kw>
+<kw name="I able to see the expected error message" owner="login_keywords">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>login_button_container</arg>
+<arg>${Error_Message}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2024-11-05T21:13:11.536528" elapsed="0.047526"/>
+</kw>
+<arg>Epic sadface: Username is required</arg>
+<status status="PASS" start="2024-11-05T21:13:11.535655" elapsed="0.048399"/>
+</kw>
+<status status="PASS" start="2024-11-05T21:13:08.521237" elapsed="3.064409"/>
+</test>
+<status status="PASS" start="2024-11-05T21:13:08.323737" elapsed="3.267781"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
