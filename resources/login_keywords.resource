@@ -7,8 +7,8 @@ Variables    ../variables/variables.py
 *** Keywords ***
 
 I navegate to the login page
-    [Arguments]    ${URL}
-    Go To    ${URL}
+    
+    Go To    ${URL_DATA["baseUrl"]}
 
 I input correct credentials
    
@@ -41,7 +41,8 @@ I Click on the button login
 
 I am able view the home page
     ${Location}    Get Location
-    Should Be Equal    ${Location}    https://www.saucedemo.com/inventory.html
+    ${full_url}    Catenate    SEPARATOR=    ${URL_DATA["baseUrl"]}    ${URL_DATA["inventoryUrl"]}
+    Should Be Equal    ${Location}    ${full_url}
 
 
 I m able to see the expected error message for no credentials
